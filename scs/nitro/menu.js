@@ -1,4 +1,4 @@
-import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
+Import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg;
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ const searchRepo = async (m, Matrix) => {
 
   if (validCommands.includes(cmd)) {
     const repoUrl = `https://api.github.com/repos/Popkiddevs/POPKID-MD`;
-    
+
     await handleRepoCommand(m, Matrix, repoUrl);
   }
 };
@@ -32,29 +32,25 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
     } = repoData;
 
     const messageText = `╭─────═━┈┈━═──━┈⊷
-┇ _ʙᴏᴛ ɴᴀᴍᴇ_ : *𝗣𝗢𝗣𝗞𝗜𝗗-𝗠𝗗*
-┇ _ᴠᴇʀꜱɪᴏɴ_ : *_7.1.0_*     
-┇ _ᴘʟᴀᴛғᴏʀᴍ_ : *_ʟɪɴᴜx_*
-┇ _ᴅᴇᴠ_ : *𝗠𝗥 𝗣𝗢𝗣𝗞𝗜𝗗*
-┇ _ʀᴀᴍ_ : *_20GB.14GB_*
-┇ _ᴅᴀɪʟʏ ᴜsᴇʀs_ : *${forks_count}*
-┇ _ᴄʀᴇᴀᴛᴇᴅ ᴏɴ_ : *${new Date(created_at).toLocaleDateString()}*
-╰─────═━┈┈━═──━┈⊷ 
-    `;
+        ┇ _ʙᴏᴛ ɴᴀᴍᴇ_ : *_𝗣𝗢𝗣𝗞𝗜𝗗-𝗠𝗗_*
+        ┇ _ᴠᴇʀꜱɪᴏɴ_ : *_7.1.0_*
+        ┇ _ᴘʟᴀᴛғᴏʀᴍ_ : *_ʟɪɴᴜx_*
+        ┇ _ᴅᴇᴠ_ : *_𝗠𝗥 𝗣𝗢𝗣𝗞𝗜𝗗_*
+        ┇ _ʀᴀᴍ_ : *_20GB.14GB_*
+        ┇ _ᴅᴀɪʟʏ ᴜsᴇʀs_ : *${forks_count}*
+        ┇ _ᴄʀᴇᴀᴛᴇᴅ ᴏɴ_ : *${new Date(created_at).toLocaleDateString()}*
+        ╰─────═━┈┈━═──━┈⊷
+            `;
 
     const repoMessage = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
         message: {
-          messageContextInfo: {
-            deviceListMetadata: {},
-            deviceListMetadataVersion: 2,
-          },
           interactiveMessage: proto.Message.InteractiveMessage.create({
             body: proto.Message.InteractiveMessage.Body.create({
               text: messageText,
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: '💫𝗕𝗘𝗦𝗧 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 𝗕𝗢𝗧💫\n\n𝗠𝗔𝗗𝗘 𝗕𝗬 𝗣𝗢𝗣𝗞𝗜𝗗',
+              text: '💫𝗕𝗘𝗦𝗧 𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 𝗕𝗢𝗧💫\n\n𝗠𝗔𝗗𝗘 𝗕𝗬 𝗜𝗔𝗡 𝗧𝗔𝗥𝗔𝗖𝗛𝗔',
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...(await prepareWAMessageMedia({
@@ -94,7 +90,7 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
                  name: 'cta_url',
                   buttonParamsJson: JSON.stringify({
                     display_text: "📽 BOTS IMAGE",
-                    url: 'https://files.catbox.moe/kiy0hl.jpg',
+                    url: 'https://i.ibb.co/Kwm5YLV/IMG-20241004-WA0011.jpgl',
                   }),
                 },
                 {
@@ -106,11 +102,11 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
                 },
               ],
             }),
-            contextInfo: {
-              mentionedJid: [m.sender],
-              forwardingScore: 9999,
-              isForwarded: true,
-            },
+            // contextInfo: { // Removed this block
+            //   mentionedJid: [m.sender],
+            //   forwardingScore: 9999,
+            //   isForwarded: true,
+            // },
           }),
         },
       },
