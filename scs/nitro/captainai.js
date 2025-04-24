@@ -118,7 +118,7 @@ const prompt = m.body.slice(prefix.length + cmd.length).trim();
                                     text: answer
                                 }),
                                 footer: proto.Message.InteractiveMessage.Footer.create({
-                                    text: "> © 👑CAPTAIN"
+                                    text: "> © 👑NITRO XMD"
                                 }),
                                 header: proto.Message.InteractiveMessage.Header.create({
                                     title: "",
