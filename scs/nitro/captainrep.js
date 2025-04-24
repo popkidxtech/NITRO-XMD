@@ -1,18 +1,17 @@
-
-
 import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg;
 import axios from 'axios';
+import config from '../../config.cjs';
 
 const searchRepo = async (m, Matrix) => {
-  const prefixMatch = m.body.match(/^[\\/!#.]/);
-  const prefix = prefixMatch ? prefixMatch[0] : '/';
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+  const prefix = config.PREFIX;
+const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
+const text = m.body.slice(prefix.length + cmd.length).trim();
 
   const validCommands = ['repo', 'sc', 'script'];
 
   if (validCommands.includes(cmd)) {
-    const repoUrl = `https://github.com/repos/HANSTZ4/HANS-MD-V2`;
+    const repoUrl = `https://api.github.com/repos/devpopkid/NITRO-XMD`;
     
     await handleRepoCommand(m, Matrix, repoUrl);
   }
@@ -33,13 +32,13 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
       owner,
     } = repoData;
 
-    const messageText = `*_HANS MD GITHUB INFORMATION_*\n
+    const messageText = `*_Repository Information:_*\n
 *_Name:_* ${name}
 *_Stars:_* ${stargazers_count}
 *_Forks:_* ${forks_count}
 *_Created At:_* ${new Date(created_at).toLocaleDateString()}
 *_Last Updated:_* ${new Date(updated_at).toLocaleDateString()}
-*_Owner:_* *_Hans Tz_*
+*_Owner:_* ${owner.login}
     `;
 
     const repoMessage = generateWAMessageFromContent(m.from, {
@@ -54,12 +53,12 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
               text: messageText,
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: '*© 👑Captain🔥Tz*',
+              text: '© NITRO XMD',
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               ...(await prepareWAMessageMedia({
                 image: {
-                  url: 'https://i.imgur.com/lfqWcEv.jpeg',
+                  url: '',
                 },
               }, { upload: Matrix.waUploadToServer })),
               title: '',
@@ -70,24 +69,24 @@ const handleRepoCommand = async (m, Matrix, repoUrl) => {
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
               buttons: [
                 {
-                  name: 'cta_url',
+                  name: 'quick_reply',
                   buttonParamsJson: JSON.stringify({
-                    display_text: 'HANSTZ-CHAT',
-                    url: 'https://wa.me/255756530143',
+                    display_text: 'Contact Owner',
+                    id: `${prefix}owner`,
                   }),
                 },
                 {
                   name: 'cta_url',
                   buttonParamsJson: JSON.stringify({
-                    display_text: 'BOT REPO',
-                    url: 'https://api.github.com/repos/HANSTZ4/HANS-MD-V2',
+                    display_text: 'Click Here To Fork',
+                    url: repoUrl.replace('api.', '').replace('repos/', '/forks/'),
                   }),
                 },
                 {
                   name: 'cta_url',
                   buttonParamsJson: JSON.stringify({
-                    display_text: 'WHATSAPP CHANNEL',
-                    url: 'https://whatsapp.com/channel/0029VasiOoR3bbUw5aV4qB31',
+                    display_text: 'Join Our Cchannel',
+                    url: 'https://whatsapp.com/channel/0029VadQrNI8KMqo79BiHr3l',
                   }),
                 },
               ],
