@@ -10,25 +10,23 @@ const alive = async (m, Matrix) => {
   
   const prefix = /^[\\/!#.]/gi.test(m.body) ? m.body.match(/^[\\/!#.]/gi)[0] : '/';
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).toLowerCase() : '';
-    if (['alive', 'hansuptime', 'uptime'].includes(cmd)) {
+    if (['alive', 'uptime', 'runtime'].includes(cmd)) {
 
-  const uptimeMessage = `*ℂ𝔸ℙ𝕋𝔸𝕀ℕ-𝕄𝔻-𝕆ℕ𝕃𝕀ℕ𝔼-𝔸ℕ𝕐-𝕋𝕀𝕄𝔼-𝕌ℕ𝔸𝕊ℍ𝔸ℕ𝔾𝔸𝔸 𝔸𝕌 😎*
+  const uptimeMessage = `*ZIPPY MD IS ACTIVE*
 
-╔══════════ஜ۩۞۩ஜ══════════╗
-┇ℂ𝔸ℙ𝕋𝔸𝕀ℕ-𝕄𝔻-𝕀𝕊-𝕆ℕ𝕃𝕀ℕ𝔼-𝕁𝕌𝕊𝕋-𝕋𝕐ℙ-.𝕄𝔼ℕ𝕌 😎
+╭─────═━┈┈━═──━┈⊷
 ┇ *${days} Day*
 ┇ *${hours} Hour*
 ┇ *${minutes} Minute*
 ┇ *${seconds} Second*
-┇𝕂𝔸𝕄𝔸 𝕂𝔸𝕎𝔸 𝕄𝔹𝕆ℕ𝔾𝕆 𝔸ℕ𝔸 𝔼𝕃𝔼𝕎𝔸 😹
-╚═════════ஜ۩۞۩ஜ═══════════╝
+╰─────═━┈┈━═──━┈⊷
 `;
 
   const buttons = [
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
-          display_text: "Ping🚀",
+          display_text: "Ping⏳",
           id: `${prefix}ping`
         })
       }
@@ -46,7 +44,7 @@ const alive = async (m, Matrix) => {
             text: uptimeMessage
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
-            text: "© captain"
+            text: "© popkid"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
             title: "",
@@ -62,8 +60,8 @@ const alive = async (m, Matrix) => {
                   forwardingScore: 999,
                   isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                  newsletterJid: '255618076073',
-                  newsletterName: "ℂ𝔸ℙ𝕋𝔸𝕀ℕ-𝕄𝔻",
+                  newsletterJid: '254111385747',
+                  newsletterName: "POPKID MD",
                   serverMessageId: 143
                 }
               }
