@@ -102,11 +102,11 @@ async function start() {
                 if (initialConnection) {
                     console.log(chalk.green("✔️  ᴊᴏᴇʟ-ˣᴍᴅ ɪs ɴᴏᴡ ᴏɴʟɪɴᴇ ᴀɴᴅ ᴘᴏᴡᴇʀᴇᴅ ᴜᴘ"));
 
-                    const image = { url: "https://raw.githubusercontent.com/joeljamestech2/JOEL-XMD/refs/heads/main/mydata/media/Xstarting.jpg" };
-                    const caption = `╭━━ *『 ᴊᴏᴇʟ-ˣᴍᴅ ɪɴɪᴛɪᴀʟɪᴢᴇᴅ 』*
+                    const image = { url: "https://files.catbox.moe/nk71o3.jpg" };
+                    const caption = `╭━━ *『 ɴɪᴛʀᴏ-ˣᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ 』*
 ┃
-┃  ⚡ *ʙᴏᴛ ɴᴀᴍᴇ:* ᴊᴏᴇʟ-ˣᴍᴅ ⱽ¹⁰
-┃  👑 *ᴏᴡɴᴇʀ:* ʟᴏʀᴅ ᴊᴏᴇʟ
+┃  ⚡ *ʙᴏᴛ ɴᴀᴍᴇ:* ɴɪᴛʀᴏ xᴍᴅ ʙᴏᴛ
+┃  👑 *ᴏᴡɴᴇʀ:* ᴅᴇᴠs
 ┃  ⚙️ *ᴍᴏᴅᴇ:* ${config.MODE}
 ┃  🎯 *ᴘʀᴇꜰɪx:* ${config.PREFIX}
 ┃  ✅ *ꜱᴛᴀᴛᴜꜱ:* ᴏɴʟɪɴᴇ & ꜱᴛᴀʙʟᴇ
