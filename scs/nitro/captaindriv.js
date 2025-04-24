@@ -20,7 +20,7 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
 
       if (gdriveInfo && gdriveInfo.status && gdriveInfo.data) {
         const mediaUrl = gdriveInfo.data;
-        const caption = `> © Powered By 👑CAPTAIN -MD🔥`;
+        const caption = `> © Powered By 👑NITRO-MD🔥`;
 
         // Inferring the file type based on the file extension
         const extension = mediaUrl.split('.').pop().toLowerCase();
