@@ -7,13 +7,13 @@ const text = m.body.slice(prefix.length + cmd.length).trim();
 
   if (cmd === "ping") {
     const start = new Date().getTime();
-    await m.React('😎');
+    await m.React('⏳');
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
 
 
 
-    const text = `*👑CAPTAIN-MD🔥 speed is80${responseTime.toFixed(2)}8 ms*`;
+    const text = `*Pong▰▰▰▰▰▰▱▱▱▱ 70${responseTime.toFixed(2)}0 ms*`;
     sock.sendMessage(m.from, { text }, { quoted: m });
   }
 }
