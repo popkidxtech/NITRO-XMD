@@ -75,13 +75,13 @@ async function start() {
     try {
         const { state, saveCreds } = await useMultiFileAuthState(sessionDir);
         const { version, isLatest } = await fetchLatestBaileysVersion();
-        console.log(`joel md using WA v${version.join('.')}, isLatest: ${isLatest}`);
+        console.log(`popkid md using WA v${version.join('.')}, isLatest: ${isLatest}`);
 
         const Matrix = makeWASocket({
             version,
             logger: pino({ level: 'silent' }),
             printQRInTerminal: useQR,
-            browser: ["ʝσєℓ χ∂", "safari", "3.3"],
+            browser: ["popkid", "safari", "3.3"],
             auth: state,
             getMessage: async (key) => {
                 if (store) {
@@ -126,16 +126,16 @@ async function start() {
                             isForwarded: true,
                             forwardingScore: 999,
                             forwardedNewsletterMessageInfo: {
-                                newsletterJid: '120363317462952356@newsletter',
-                                newsletterName: "ᴊᴏᴇʟ xmd ʙᴏᴛ",
+                                newsletterJid: '120363290715861418@newsletter',
+                                newsletterName: "ɴɪᴛʀᴏ xmd ʙᴏᴛ",
                                 serverMessageId: -1,
                             },
                             externalAdReply: {
-                                title: "ᴊᴏᴇʟ xmd ʙᴏᴛ",
+                                title: "ɴɪᴛʀᴏ xmd ʙᴏᴛ",
                                 body: "ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʟᴏʀᴅ ᴊᴏᴇʟ",
                                 thumbnailUrl:
-                                    'https://raw.githubusercontent.com/joeljamestech2/JOEL-XMD/refs/heads/main/mydata/media/joelXbot.jpg',
-                                sourceUrl: 'https://whatsapp.com/channel/0029Vak2PevK0IBh2pKJPp2K',
+                                    'https://files.catbox.moe/nk71o3.jpg',
+                                sourceUrl: 'https://whatsapp.com/channel/0029VajweHxKQuJP6qnjLM31',
                                 mediaType: 1,
                                 renderLargerThumbnail: false,
                             },
